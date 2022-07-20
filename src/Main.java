@@ -37,13 +37,7 @@ public class Main {
                 case "+" :
                     result = var1 + var2;
                 case "-" :
-                    try {
-
-                        System.out.println("Negative number");
-                        break;
-                    }
-                    System.out.println(var1 - var2);
-                    break;
+                    result = var1 * var2;
                 case "*" :
                     result = var1 * var2;
                 case "/" :
@@ -109,18 +103,4 @@ public class Main {
                     break;
                 case ' ':
             }
-        }
-
-        switch (words[1]){
-            case "+" :
-                System.out.println(words[0] + words[2]);
-                break;
-            case "-" :
-                System.out.println(words[0] - words[2]);
-                break;
-            case "*" :
-                System.out.println(words[0] * words[2]);
-                break;
-            case "/" :
-                System.out.println(words[0] / words[2]);
-                break;*/
+        }*/
