@@ -50,10 +50,10 @@ public class Main {
                     check2++;
                 }
             }
-                if (check1 != 1 || check2 != 1) {
-                    throw new Exception("Invalid value");
-                }
+            if (check1 != 1 || check2 != 1) {
+                throw new Exception("Invalid value");
             }
+
             var1 = words[0].replace("X", "VV").replace("IV", "IIII").replace("V", "IIIII").length();
             var2 = words[2].replace("X", "VV").replace("IV", "IIII").replace("V", "IIIII").length();
             switch (words[1]) {
@@ -105,4 +105,5 @@ public class Main {
             }
             System.out.println(finalresult);
         }
+    }
     }
