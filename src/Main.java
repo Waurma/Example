@@ -29,7 +29,10 @@ public class Main {
             check++;
         }
 
-        if (check == 0 && var1 <= 10 && var1 >= 1 && var2 <= 10 && var2 >= 1) {
+        if (check == 0) {
+            if (var1 > 10 || var1 < 1 || var2 > 10 || var2 < 1){
+                throw new Exception("The number too large or too small");       //added check
+            }
             switch (words[1]) {
                 case "+" -> System.out.println(var1 + var2);
                 case "-" -> System.out.println(var1 - var2);
@@ -62,8 +65,8 @@ public class Main {
                 case "*" -> result = var1 * var2;
                 case "/" -> result = var1 / var2;
             }
-            if (result < 0) {
-                throw new Exception("Negative number");
+            if (result <= 0) {                                          // added "<"
+                throw new Exception("Negative number or result = 0");   // added "... or result = 0"
             }
             while (result != 0) {
                 while (result >= 100) {
