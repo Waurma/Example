@@ -1,14 +1,13 @@
 import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        String h1 = sc.nextLine();
-        String[] words = h1.split(" ");
+    public static String calc(String input) throws Exception {
+        String[] words = input.split(" ");
         int check = 0;
         int var1 = 0;
         int var2 = 0;
-        int result = 0;
+        int result;
         int check1 = 0;
         int check2 = 0;
         StringBuilder finalresult = new StringBuilder();
@@ -34,14 +33,15 @@ public class Main {
                 throw new Exception("The number too large or too small");       //added check
             }
             switch (words[1]) {
-                case "+" -> System.out.println(var1 + var2);
-                case "-" -> System.out.println(var1 - var2);
-                case "*" -> System.out.println(var1 * var2);
-                case "/" -> System.out.println(var1 / var2);
+                case "+" -> {return Integer.toString(var1 + var2);}
+                case "-" -> {return Integer.toString(var1 - var2);}
+                case "*" -> {return Integer.toString(var1 * var2);}
+                case "/" -> {return Integer.toString(var1 / var2);}
+                default -> throw new Exception("Invalid operation");
             }
         } else if (check == 1) {
             throw new Exception("Different data type");
-        } else if (check == 2) {
+        } else {
             for (String number1 : massive) {
                 if (words[0].equals(number1)) {
                     check1++;
@@ -64,6 +64,7 @@ public class Main {
                 case "-" -> result = var1 - var2;
                 case "*" -> result = var1 * var2;
                 case "/" -> result = var1 / var2;
+                default -> throw new Exception("Invalid operation");
             }
             if (result <= 0) {                                          // added "<"
                 throw new Exception("Negative number or result = 0");   // added "... or result = 0"
@@ -106,7 +107,15 @@ public class Main {
                     result -= 1;
                 }
             }
-            System.out.println(finalresult);
+            return finalresult.toString();
         }
     }
+    /*    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        String h1 = sc.nextLine();
+        String result = calc(h1);
+        System.out.println(result);
     }
+*/
+}
+
